@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="17008"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Betelguese" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Betelguese" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Betelguese" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="K2q-w9-unQ" kind="show" id="Vz9-Fc-RAp"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide Betelguese" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit Betelguese" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="aUF-d1-5bR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                    <items>
+                                        <menuItem title="Betelguese Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                            <connections>
+                                                <action selector="showHelp:" target="Voe-Tx-rLC" id="I6K-sN-4A8"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Betelguese" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="27" y="-79"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Betelguese" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Betelguese" separatorStyle="none" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="640" height="450"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1255"/>
+                        <toolbar key="toolbar" implicitIdentifier="A209997A-8C7A-4623-B088-E22E6CF0260F" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="Rfn-TK-cUu">
+                            <allowedToolbarItems/>
+                            <defaultToolbarItems/>
+                        </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <touchBar key="touchBar" id="maf-Pz-KLf">
+                        <touchBarItems>
+                            <touchBarItem id="g2Y-C4-k3w">
+                                <viewController key="viewController" id="QwJ-c1-5rF">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-3l-rMc">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Install Odysseyra1n" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Pa-Ee-17x">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startButtonClick:" target="Oky-zY-oP4" id="hcY-MM-4Fp"/>
+                                        </connections>
+                                    </button>
+                                </viewController>
+                            </touchBarItem>
+                            <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFlexibleSpace" id="4MF-dk-eG2"/>
+                            <touchBarItem id="5dE-6R-6sC">
+                                <viewController key="viewController" id="Irr-fq-9XK">
+                                    <textField key="view" hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nkK-Ml-iOC">
+                                        <rect key="frame" x="0.0" y="0.0" width="47" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Ready" id="61q-g4-Aug">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </viewController>
+                            </touchBarItem>
+                            <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFlexibleSpace" id="0s2-Bm-hqB"/>
+                            <touchBarItem id="Q0r-Sw-wdO">
+                                <viewController key="viewController" id="qWY-Lh-kmX">
+                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qM2-Ne-vTM">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="About Betelguese" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9mh-DT-Ivs">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <segue destination="K2q-w9-unQ" kind="show" id="k6a-Jw-7z0"/>
+                                        </connections>
+                                    </button>
+                                </viewController>
+                            </touchBarItem>
+                        </touchBarItems>
+                    </touchBar>
+                    <connections>
+                        <outlet property="goTouchBarButton" destination="SSc-3l-rMc" id="naq-w8-3Z5"/>
+                        <outlet property="progressTouchBarLabel" destination="nkK-Ml-iOC" id="8D6-Au-4zB"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="H1I-pk-k1P">
+            <objects>
+                <windowController id="K2q-w9-unQ" sceneMemberID="viewController">
+                    <window key="window" title="About Betelguese" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="0Ls-sE-PqY">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="362" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+                        <connections>
+                            <outlet property="delegate" destination="K2q-w9-unQ" id="2Dr-Xe-8NO"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="FIK-jU-6e2" kind="relationship" relationship="window.shadowedContentViewController" id="pMX-oM-eCB"/>
+                    </connections>
+                </windowController>
+                <customObject id="tme-YG-VvC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742" y="250"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="GiQ-h5-mJz">
+            <objects>
+                <viewController id="FIK-jU-6e2" customClass="AboutViewController" customModule="Betelguese" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="VfE-gd-T10">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="618"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" borderType="none" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="1E3-pi-NdM">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="624"/>
+                                <view key="contentView" id="MoV-mc-edH">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="624"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tIa-vo-G53">
+                                            <rect key="frame" x="208" y="540" width="64" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="1jK-dG-Y2h"/>
+                                                <constraint firstAttribute="height" constant="64" id="d33-yN-TN1"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIconImage" id="8Xo-yN-Jn7"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-CC-XyW">
+                                            <rect key="frame" x="200" y="515" width="80" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Betelguese" id="X9n-cs-5dk">
+                                                <font key="font" metaFont="systemSemibold" size="14"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="23" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mc9-pf-jwY">
+                                            <rect key="frame" x="20" y="163" width="440" height="269"/>
+                                            <subviews>
+                                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdX-AE-T4l">
+                                                    <rect key="frame" x="0.0" y="219" width="440" height="50"/>
+                                                    <subviews>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bce-AK-sJB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="Bv0-y8-HtA"/>
+                                                                <constraint firstAttribute="width" constant="50" id="CmQ-wh-ICG"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="7EV-z0-86M"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="248.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rwq-hm-Hrh">
+                                                            <rect key="frame" x="62" y="6" width="258" height="38"/>
+                                                            <subviews>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eSl-3p-6K8">
+                                                                    <rect key="frame" x="-2" y="22" width="83" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="DEVELOPER" id="Py8-Hj-jaq">
+                                                                        <font key="font" metaFont="systemBold"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yrQ-uu-dMk">
+                                                                    <rect key="frame" x="-2" y="0.0" width="74" height="20"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="23 Aaron" id="Woi-l6-0NF">
+                                                                        <font key="font" metaFont="system" size="17"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <visibilityPriorities>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                            </visibilityPriorities>
+                                                            <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                            </customSpacing>
+                                                        </stackView>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="XbH-bS-hfi">
+                                                            <rect key="frame" x="332" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="48" id="FE7-S3-fH5"/>
+                                                                <constraint firstAttribute="height" constant="48" id="lZ8-4g-EsP"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TwitterIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="m0W-CC-Cnj">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="aaronTwitterButton:" target="FIK-jU-6e2" id="RrO-S1-0aH"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="6ml-Mk-OmS">
+                                                            <rect key="frame" x="392" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="Fon-OF-5Bv"/>
+                                                                <constraint firstAttribute="width" constant="48" id="aWE-PF-qFa"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GithubIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="tpH-9q-Mwe">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="aaronGitHubButton:" target="FIK-jU-6e2" id="MVy-r4-Sq9"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocz-PH-mMX">
+                                                    <rect key="frame" x="0.0" y="146" width="440" height="50"/>
+                                                    <subviews>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i0j-Cd-Iro">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="B9s-hs-8a7"/>
+                                                                <constraint firstAttribute="width" constant="50" id="Lpu-up-myv"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="GLG-za-auU"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="248.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4a-eu-R12">
+                                                            <rect key="frame" x="62" y="6" width="258" height="38"/>
+                                                            <subviews>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RjD-ah-XDp">
+                                                                    <rect key="frame" x="-2" y="22" width="83" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="DEVELOPER" id="tZH-JE-aEI">
+                                                                        <font key="font" metaFont="systemBold"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PNZ-8T-nlX">
+                                                                    <rect key="frame" x="-2" y="0.0" width="109" height="20"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Adam Demasi" id="p6d-Ec-q5v">
+                                                                        <font key="font" metaFont="system" size="17"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <visibilityPriorities>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                            </visibilityPriorities>
+                                                            <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                            </customSpacing>
+                                                        </stackView>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="ERe-xp-EOX">
+                                                            <rect key="frame" x="332" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="48" id="bLn-l6-EJF"/>
+                                                                <constraint firstAttribute="height" constant="48" id="zvA-pY-TbP"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TwitterIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="6WB-ix-OOr">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="kirbTwitterButton:" target="FIK-jU-6e2" id="22U-yD-0e3"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="jdx-Qq-l0e">
+                                                            <rect key="frame" x="392" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="48" id="bzb-D7-02t"/>
+                                                                <constraint firstAttribute="height" constant="48" id="jG0-n7-OkG"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GithubIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9qp-TI-A9g">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="kirbGitHubButton:" target="FIK-jU-6e2" id="P59-Lq-RVh"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-md-VrP">
+                                                    <rect key="frame" x="0.0" y="73" width="440" height="50"/>
+                                                    <subviews>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QRA-vY-UFi">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="1TZ-9Z-cPv"/>
+                                                                <constraint firstAttribute="height" constant="50" id="S6x-DK-YG7"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="2dd-Sc-7wP"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="248.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ije-ga-Kwy">
+                                                            <rect key="frame" x="62" y="6" width="258" height="38"/>
+                                                            <subviews>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xsr-h3-Znn">
+                                                                    <rect key="frame" x="-2" y="22" width="213" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="PROCURSUS REPO MAINTAINER" id="xZy-ix-CaW">
+                                                                        <font key="font" metaFont="systemBold"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RYT-eI-kK2">
+                                                                    <rect key="frame" x="-2" y="0.0" width="59" height="20"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Diatrus" id="wrI-Bs-bLd">
+                                                                        <font key="font" metaFont="system" size="17"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <visibilityPriorities>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                            </visibilityPriorities>
+                                                            <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                            </customSpacing>
+                                                        </stackView>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="GwD-ow-5so">
+                                                            <rect key="frame" x="332" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="48" id="VMZ-rD-nSP"/>
+                                                                <constraint firstAttribute="height" constant="48" id="oTX-KR-cB6"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TwitterIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vAE-80-7WL">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="haydenTwitterButton:" target="FIK-jU-6e2" id="Grv-Pr-VSr"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="1WN-nU-Zea">
+                                                            <rect key="frame" x="392" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="5jE-Pk-7lX"/>
+                                                                <constraint firstAttribute="width" constant="48" id="Rb7-HB-Zoh"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GithubIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="FkM-pe-Hg1">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="haydenGitHubButton:" target="FIK-jU-6e2" id="04L-R1-lQu"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ujt-wX-gMt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="440" height="50"/>
+                                                    <subviews>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ff-Vi-Ru6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="AgR-kJ-HOE"/>
+                                                                <constraint firstAttribute="height" constant="50" id="N9f-FU-Qzr"/>
+                                                            </constraints>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="fkA-dW-DKm"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="248.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="akM-Nc-nJX">
+                                                            <rect key="frame" x="62" y="6" width="258" height="38"/>
+                                                            <subviews>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="55U-1U-5Ci">
+                                                                    <rect key="frame" x="-2" y="22" width="192" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="ODYSSEY REPO MAINTAINER" id="DJc-de-8MP">
+                                                                        <font key="font" metaFont="systemBold"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xNr-sl-sDJ">
+                                                                    <rect key="frame" x="-2" y="0.0" width="68" height="20"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Coolstar" id="uUd-IO-1Xg">
+                                                                        <font key="font" metaFont="system" size="17"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <visibilityPriorities>
+                                                                <integer value="1000"/>
+                                                                <integer value="1000"/>
+                                                            </visibilityPriorities>
+                                                            <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                                <real value="3.4028234663852886e+38"/>
+                                                            </customSpacing>
+                                                        </stackView>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="NIA-Mh-Emf">
+                                                            <rect key="frame" x="332" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="SZf-IV-QSN"/>
+                                                                <constraint firstAttribute="width" constant="48" id="WIa-Qp-3OI"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="TwitterIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="mgm-eb-5FI">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="csTwitterButton:" target="FIK-jU-6e2" id="S4s-fZ-oca"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="6IM-uu-lCZ">
+                                                            <rect key="frame" x="392" y="1" width="48" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="48" id="PQT-t1-kXX"/>
+                                                                <constraint firstAttribute="height" constant="48" id="tej-i0-BsC"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GithubIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="eds-K3-oL7">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="csGitHubButton:" target="FIK-jU-6e2" id="aA9-j3-Ad5"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                        <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6J-xg-IMj">
+                                            <rect key="frame" x="74" y="20" width="332" height="44"/>
+                                            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="udc-cy-6yW">
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="SoD-F6-Ugg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <size key="minSize" width="332" height="44"/>
+                                                        <size key="maxSize" width="11040" height="10000000"/>
+                                                        <attributedString key="textStorage">
+                                                            <fragment content="Reporting an issue? Go to ">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" metaFont="controlContent"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops>
+                                                                            <textTab alignment="left" location="36">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="72">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="108">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="144">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="180">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="216">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="252">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="288">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="324">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="360">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="396">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="432">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                        </tabStops>
+                                                                    </paragraphStyle>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="the Github repo">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" metaFont="controlContent"/>
+                                                                    <url key="NSLink" string="https://github.com/23Aaron/odysseyra1n-gui"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops>
+                                                                            <textTab alignment="left" location="36">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="72">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="108">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="144">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="180">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="216">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="252">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="288">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="324">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="360">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="396">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="432">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                        </tabStops>
+                                                                    </paragraphStyle>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=" for support with the app and for support with the bootstrap go to ">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" metaFont="controlContent"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops>
+                                                                            <textTab alignment="left" location="36">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="72">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="108">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="144">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="180">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="216">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="252">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="288">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="324">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="360">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="396">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="432">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                        </tabStops>
+                                                                    </paragraphStyle>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="Coolstar’s Odyssey-bootstrap repo">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" metaFont="controlContent"/>
+                                                                    <url key="NSLink" string="https://github.com/coolstar/Odyssey-bootstrap"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops>
+                                                                            <textTab alignment="left" location="36">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="72">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="108">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="144">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="180">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="216">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="252">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="288">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="324">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="360">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="396">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="432">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                        </tabStops>
+                                                                    </paragraphStyle>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=".">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" metaFont="controlContent"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops>
+                                                                            <textTab alignment="left" location="36">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="72">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="108">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="144">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="180">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="216">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="252">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="288">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="324">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="360">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="396">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                            <textTab alignment="left" location="432">
+                                                                                <options/>
+                                                                            </textTab>
+                                                                        </tabStops>
+                                                                    </paragraphStyle>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </clipView>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="tG2-TD-w3D"/>
+                                            </constraints>
+                                            <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="QnT-X8-1bn">
+                                                <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="OhZ-tu-pE1">
+                                                <rect key="frame" x="-100" y="-100" width="16" height="135"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QTH-K8-iC1">
+                                            <rect key="frame" x="18" y="455" width="444" height="24"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Credits" id="JTr-S6-wAO">
+                                                <font key="font" metaFont="systemSemibold" size="20"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UfI-QE-sGK">
+                                            <rect key="frame" x="18" y="116" width="444" height="24"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Options" id="2CB-2U-8Sh">
+                                                <font key="font" metaFont="systemSemibold" size="20"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-Oh-8Gn">
+                                            <rect key="frame" x="30" y="85" width="418" height="18"/>
+                                            <buttonCell key="cell" type="check" title="One Click Mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="v1F-fW-2Xh">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="oneClickCheckboxChanged:" target="FIK-jU-6e2" id="eZj-3a-bc2"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4w0-Oh-8Gn" firstAttribute="top" secondItem="UfI-QE-sGK" secondAttribute="bottom" constant="14" id="00s-uL-RMg"/>
+                                        <constraint firstItem="UfI-QE-sGK" firstAttribute="top" secondItem="mc9-pf-jwY" secondAttribute="bottom" constant="23" id="1EV-DZ-DZX"/>
+                                        <constraint firstItem="mc9-pf-jwY" firstAttribute="top" secondItem="QTH-K8-iC1" secondAttribute="bottom" constant="23" id="9oT-Ya-IG9"/>
+                                        <constraint firstItem="K6J-xg-IMj" firstAttribute="width" secondItem="MoV-mc-edH" secondAttribute="width" multiplier="0.69" id="AwO-So-M7R"/>
+                                        <constraint firstItem="QTH-K8-iC1" firstAttribute="top" secondItem="yTd-CC-XyW" secondAttribute="bottom" constant="36" id="B9i-Vz-tTW"/>
+                                        <constraint firstAttribute="trailing" secondItem="QTH-K8-iC1" secondAttribute="trailing" constant="20" id="DXK-Yi-HaT"/>
+                                        <constraint firstItem="mc9-pf-jwY" firstAttribute="leading" secondItem="MoV-mc-edH" secondAttribute="leading" constant="20" id="I3P-kg-Fge"/>
+                                        <constraint firstItem="4w0-Oh-8Gn" firstAttribute="leading" secondItem="MoV-mc-edH" secondAttribute="leading" constant="32" id="MfR-H4-b89"/>
+                                        <constraint firstItem="K6J-xg-IMj" firstAttribute="top" secondItem="4w0-Oh-8Gn" secondAttribute="bottom" constant="22" id="Mo4-aK-ehe"/>
+                                        <constraint firstItem="yTd-CC-XyW" firstAttribute="top" secondItem="tIa-vo-G53" secondAttribute="bottom" constant="8" id="OTs-sj-BHQ"/>
+                                        <constraint firstItem="K6J-xg-IMj" firstAttribute="centerX" secondItem="MoV-mc-edH" secondAttribute="centerX" id="UOB-sW-vIe"/>
+                                        <constraint firstItem="QTH-K8-iC1" firstAttribute="leading" secondItem="MoV-mc-edH" secondAttribute="leading" constant="20" id="Y5o-2e-Ffa"/>
+                                        <constraint firstAttribute="trailing" secondItem="UfI-QE-sGK" secondAttribute="trailing" constant="20" id="a21-aS-K1P"/>
+                                        <constraint firstItem="yTd-CC-XyW" firstAttribute="centerX" secondItem="MoV-mc-edH" secondAttribute="centerX" id="bBq-B8-Vbl"/>
+                                        <constraint firstItem="tIa-vo-G53" firstAttribute="centerX" secondItem="MoV-mc-edH" secondAttribute="centerX" id="bQ0-w6-SxT"/>
+                                        <constraint firstItem="UfI-QE-sGK" firstAttribute="leading" secondItem="MoV-mc-edH" secondAttribute="leading" constant="20" id="jnL-ek-iFa"/>
+                                        <constraint firstAttribute="trailing" secondItem="4w0-Oh-8Gn" secondAttribute="trailing" constant="32" id="nt4-p3-bkj"/>
+                                        <constraint firstAttribute="bottom" secondItem="K6J-xg-IMj" secondAttribute="bottom" constant="20" id="stI-Ui-Ugy"/>
+                                        <constraint firstItem="tIa-vo-G53" firstAttribute="top" secondItem="MoV-mc-edH" secondAttribute="top" constant="20" id="weg-d0-4J1"/>
+                                        <constraint firstAttribute="trailing" secondItem="mc9-pf-jwY" secondAttribute="trailing" constant="20" id="wja-cc-mbk"/>
+                                    </constraints>
+                                </view>
+                                <color key="fillColor" name="Color"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="1E3-pi-NdM" firstAttribute="top" secondItem="VfE-gd-T10" secondAttribute="top" id="AGE-ze-HG7"/>
+                            <constraint firstAttribute="bottom" secondItem="1E3-pi-NdM" secondAttribute="bottom" id="AuH-vK-ysu"/>
+                            <constraint firstAttribute="trailing" secondItem="1E3-pi-NdM" secondAttribute="trailing" id="jDv-PT-jgF"/>
+                            <constraint firstItem="1E3-pi-NdM" firstAttribute="leading" secondItem="VfE-gd-T10" secondAttribute="leading" id="oow-L6-5Tx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aaronImageView" destination="bce-AK-sJB" id="sRw-r4-S2s"/>
+                        <outlet property="adamImageView" destination="i0j-Cd-Iro" id="OAY-EI-bcE"/>
+                        <outlet property="coolstarImageView" destination="3ff-Vi-Ru6" id="T2N-sQ-Bw6"/>
+                        <outlet property="diatrusImageView" destination="QRA-vY-UFi" id="Ssy-Fh-r7E"/>
+                        <outlet property="oneClickCheckbox" destination="4w0-Oh-8Gn" id="oDr-CG-EFl"/>
+                    </connections>
+                </viewController>
+                <customObject id="hpj-hb-bfv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742" y="803"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Betelguese" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="450"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c4f-Tb-MOi">
+                                <rect key="frame" x="0.0" y="0.0" width="640" height="450"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="fl3-gM-W2Y"/>
+                                    <constraint firstAttribute="width" constant="640" id="rbG-Pu-O9q"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="background" id="0SG-ku-b1L"/>
+                            </imageView>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="44" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-Hc-Du1">
+                                <rect key="frame" x="145" y="78" width="350" height="190"/>
+                                <subviews>
+                                    <box boxType="custom" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-Lo-KTy">
+                                        <rect key="frame" x="0.0" y="126" width="350" height="64"/>
+                                        <view key="contentView" id="LgT-ju-6p1">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="64"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="Rt8-4S-ESc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="64"/>
+                                                    <clipView key="contentView" drawsBackground="NO" id="5i2-Mo-cJi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="64"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textView editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="dlD-Cw-Nfk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="64"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="minSize" width="350" height="64"/>
+                                                                <size key="maxSize" width="350" height="10000000"/>
+                                                                <attributedString key="textStorage">
+                                                                    <fragment content="Ready!">
+                                                                        <attributes>
+                                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                            <font key="NSFont" size="12" name="Helvetica"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            </textView>
+                                                        </subviews>
+                                                    </clipView>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="64" id="hTe-fr-7Rv"/>
+                                                    </constraints>
+                                                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="p0N-gB-1XD">
+                                                        <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="duZ-Ub-Owk">
+                                                        <rect key="frame" x="-100" y="-100" width="16" height="64"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                </scrollView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Rt8-4S-ESc" firstAttribute="top" secondItem="LgT-ju-6p1" secondAttribute="top" id="1XM-SB-VlC"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rt8-4S-ESc" secondAttribute="trailing" id="PH7-Z4-aM0"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rt8-4S-ESc" secondAttribute="bottom" id="nZ8-H1-9La"/>
+                                                <constraint firstItem="Rt8-4S-ESc" firstAttribute="leading" secondItem="LgT-ju-6p1" secondAttribute="leading" id="tx7-1K-718"/>
+                                            </constraints>
+                                        </view>
+                                        <color key="fillColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                    </box>
+                                    <progressIndicator wantsLayer="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="SMT-6D-x5H">
+                                        <rect key="frame" x="45" y="63" width="260" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="obX-04-7fb"/>
+                                        </constraints>
+                                    </progressIndicator>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SUs-8s-WRM">
+                                        <rect key="frame" x="100" y="-7" width="151" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Install Odysseyra1n" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4L9-oL-ZXG">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="startButtonClick:" target="XfG-lQ-9wD" id="oe8-hc-MLi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pQN-Lo-KTy" firstAttribute="width" secondItem="2bX-Hc-Du1" secondAttribute="width" id="YDE-wp-YV7"/>
+                                    <constraint firstAttribute="width" constant="350" id="Zqh-BE-EV6"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="c4f-Tb-MOi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ABi-vb-N5u"/>
+                            <constraint firstItem="2bX-Hc-Du1" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" multiplier="1.23" id="P67-dw-Hn1"/>
+                            <constraint firstAttribute="bottom" secondItem="c4f-Tb-MOi" secondAttribute="bottom" id="eBZ-Ho-D3h"/>
+                            <constraint firstAttribute="trailing" secondItem="c4f-Tb-MOi" secondAttribute="trailing" id="gZG-pX-iuy"/>
+                            <constraint firstItem="c4f-Tb-MOi" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="tKL-RG-gZ9"/>
+                            <constraint firstItem="2bX-Hc-Du1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="twt-Tb-egg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goButton" destination="SUs-8s-WRM" id="YeJ-Fa-USR"/>
+                        <outlet property="progressBar" destination="SMT-6D-x5H" id="p3Q-eV-iAJ"/>
+                        <outlet property="statusBox" destination="pQN-Lo-KTy" id="s8r-8W-HME"/>
+                        <outlet property="statusLabel" destination="dlD-Cw-Nfk" id="0Wl-uQ-gyt"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="788"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="k6a-Jw-7z0"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="AppIconImage" width="128" height="128"/>
+        <image name="GithubIcon" width="48" height="48"/>
+        <image name="TwitterIcon" width="48" height="48"/>
+        <image name="background" width="640" height="450"/>
+        <namedColor name="Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
