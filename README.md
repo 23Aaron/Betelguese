@@ -25,7 +25,7 @@ Compatibility is with every device that checkra1n is compatible with as this is 
 Because of Procursus, you are now able to have support for **all four main package managers natively (for the first time)**.<br/>
 Sileo (**Preinstalled**), Cydia (*on the Procursus Repo, forked by Kronos*), Zebra, and Installer.<br/>
 
-It's further to note that Procursus is also maintained **by the community** with its build system by [@Diatrus](https://twitter.com/Diatrus) & [@hbkirb](https://twitter.com/hbkirb)<br/>.
+It's further to note that Procursus is also maintained **by the community** with its build system by [@Diatrus](https://twitter.com/Diatrus) & [@hbkirb](https://twitter.com/hbkirb).<br/>
 Documentation for further contribution is available here: [Procursus](https://github.com/ProcursusTeam/Procursus)
 
 <a href="#readme"><img src="Assets/coloured line.png" alt=""></a>
