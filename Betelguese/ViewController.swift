@@ -132,8 +132,6 @@ class ViewController: NSViewController {
         
         URLSession.shared.downloadTask(with: URL(string: "https://taurine.app/docs/betelguese.sh")!) { (url, response, error) in
             if error != nil {
-                NSLog("response = %@", String(describing: response))
-                NSLog("error = %@", error! as NSError)
                 DispatchQueue.main.async {
                     NSAlert(error: error!).beginSheetModal(for: self.view.window!, completionHandler: nil)
                     self.stopDoingStuff()
@@ -142,11 +140,12 @@ class ViewController: NSViewController {
             }
             
             let scriptData = try! Data(contentsOf: url!)
+            let firmware = MobileDeviceHelper.deviceFirmware ?? "0"
 
             let path = ProcessInfo.processInfo.environment["PATH"]! + ":" + Bundle.main.resourcePath!
             let process = Process()
             process.launchPath = "/bin/bash"
-            process.arguments = [ "/dev/stdin", "-y" ]
+            process.arguments = [ "/dev/stdin", "-y", firmware ]
             process.environment = [
                 "PATH": path,
                 "SSHPASS": "alpine"
