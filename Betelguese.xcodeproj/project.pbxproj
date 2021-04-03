@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9330C5AC2493D27C0070CB55 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9330C5AB2493D27C0070CB55 /* SDWebImage */; };
 		9330C5AE2493D2A30070CB55 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330C5AD2493D2A30070CB55 /* AboutViewController.swift */; };
+		937A087826182467004A6D0A /* MobileDevice.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 937A087726182467004A6D0A /* MobileDevice.tbd */; };
+		937A087E26182ABE004A6D0A /* MobileDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A087D26182ABE004A6D0A /* MobileDevice.swift */; };
 		937E90822607041D00B9AD28 /* COPYING.sshpass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 937E90812607041D00B9AD28 /* COPYING.sshpass.txt */; };
 		938B18E8249262D8008153AB /* COPYING.libplist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 938B18E6249262D8008153AB /* COPYING.libplist.txt */; };
 		938B18E9249262D8008153AB /* COPYING.libusbmuxd.txt in Resources */ = {isa = PBXBuildFile; fileRef = 938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */; };
@@ -24,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		9330C5AD2493D2A30070CB55 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		937A087026181EF9004A6D0A /* MobileDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileDevice.h; sourceTree = "<group>"; };
+		937A087126181F14004A6D0A /* Betelguese-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Betelguese-Bridging-Header.h"; sourceTree = "<group>"; };
+		937A087726182467004A6D0A /* MobileDevice.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = MobileDevice.tbd; sourceTree = "<group>"; };
+		937A087D26182ABE004A6D0A /* MobileDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevice.swift; sourceTree = "<group>"; };
 		937E90812607041D00B9AD28 /* COPYING.sshpass.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.sshpass.txt; sourceTree = "<group>"; };
 		938B18E6249262D8008153AB /* COPYING.libplist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.libplist.txt; sourceTree = "<group>"; };
 		938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.libusbmuxd.txt; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937A087826182467004A6D0A /* MobileDevice.tbd in Frameworks */,
 				9330C5AC2493D27C0070CB55 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,7 +65,10 @@
 				93A12ED82491C3E200765143 /* Betelguese */,
 				93A12ED72491C3E200765143 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
 		};
 		93A12ED72491C3E200765143 /* Products */ = {
 			isa = PBXGroup;
@@ -76,6 +86,9 @@
 				938B18E6249262D8008153AB /* COPYING.libplist.txt */,
 				938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */,
 				937E90812607041D00B9AD28 /* COPYING.sshpass.txt */,
+				937A087026181EF9004A6D0A /* MobileDevice.h */,
+				937A087726182467004A6D0A /* MobileDevice.tbd */,
+				937A087D26182ABE004A6D0A /* MobileDevice.swift */,
 				93A12ED92491C3E200765143 /* AppDelegate.swift */,
 				93A12EDB2491C3E200765143 /* ViewController.swift */,
 				938B18F224939CFA008153AB /* WindowController.swift */,
@@ -85,6 +98,7 @@
 				93A12EE9249207AA00765143 /* BackgroundImage.swift */,
 				93A12EE22491C3E600765143 /* Info.plist */,
 				93A878F825FDB0B400187BCB /* Betelguese.entitlements */,
+				937A087126181F14004A6D0A /* Betelguese-Bridging-Header.h */,
 			);
 			path = Betelguese;
 			sourceTree = "<group>";
@@ -119,11 +133,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "23 Aaron";
 				TargetAttributes = {
 					93A12ED52491C3E200765143 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -173,6 +188,7 @@
 				93A12EEA249207AA00765143 /* BackgroundImage.swift in Sources */,
 				938B18F324939CFA008153AB /* WindowController.swift in Sources */,
 				93A12EDC2491C3E200765143 /* ViewController.swift in Sources */,
+				937A087E26182ABE004A6D0A /* MobileDevice.swift in Sources */,
 				9330C5AE2493D2A30070CB55 /* AboutViewController.swift in Sources */,
 				93A12EDA2491C3E200765143 /* AppDelegate.swift in Sources */,
 			);
@@ -218,6 +234,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -278,6 +295,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -309,6 +327,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Betelguese/Betelguese.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -317,8 +336,14 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Betelguese",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.23aaron.Betelgeuse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Betelguese/Betelguese-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -327,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Betelguese/Betelguese.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -335,8 +361,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Betelguese",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.23aaron.Betelgeuse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Betelguese/Betelguese-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

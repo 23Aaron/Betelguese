@@ -13,17 +13,25 @@ class ViewController: NSViewController {
     @IBOutlet weak var progressBar: NSProgressIndicator!
     @IBOutlet weak var goButton: NSButton!
     @IBOutlet weak var statusBox: NSBox!
-    @IBOutlet var statusLabel: NSTextView!
+    @IBOutlet var logView: NSTextView!
+    @IBOutlet var statusLabel: NSTextField!
     
     var goTouchBarButton: NSButton!
     var progressTouchBarLabel: NSTextField!
     
     var isBusy = false
 
+    override func viewWillAppear() {
+        super.viewWillAppear()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.deviceDidConnect), name: MobileDeviceHelper.deviceDidConnectNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.deviceDidDisconnect), name: MobileDeviceHelper.deviceDidDisconnectNotification, object: nil)
+    }
+
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        self.view.window?.styleMask.remove(NSWindow.StyleMask.resizable)
+        self.view.window?.styleMask.remove(.resizable)
         
         if let windowController = view.window?.windowController as? WindowController {
             goTouchBarButton = windowController.goTouchBarButton
@@ -34,16 +42,36 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        statusBox.cornerRadius = 4
+
         setStatus("Ready!")
-        
+
         Timer.scheduledTimer(timeInterval: 1 / 60, target: self, selector: #selector(self.refreshStatus), userInfo: nil, repeats: true)
+    }
+
+    @objc private func deviceDidConnect() {
+        guard let name = MobileDeviceHelper.deviceName,
+              let firmware = MobileDeviceHelper.deviceFirmware else {
+            deviceDidDisconnect()
+            return
+        }
+
+        if firmware.compare("12.0") == .orderedAscending {
+            statusLabel.stringValue = "\(name) (iOS \(firmware)) is not compatible."
+            goButton.isEnabled = false
+        } else {
+            statusLabel.stringValue = "Ready to install on \(name) (iOS \(firmware))"
+            goButton.isEnabled = !isBusy
+        }
+    }
+
+    @objc private func deviceDidDisconnect() {
+        statusLabel.stringValue = "Connect your device to continue."
+        goButton.isEnabled = false
     }
     
     @objc func refreshStatus() {
         if isBusy {
-            self.statusLabel.scrollToEndOfDocument(self)
+            self.logView.scrollToEndOfDocument(self)
         }
     }
     
@@ -60,9 +88,9 @@ class ViewController: NSViewController {
             .foregroundColor: NSColor.white
         ])
         if isLogOutput {
-            statusLabel.textStorage?.append(attributedString)
+            logView.textStorage?.append(attributedString)
         } else {
-            statusLabel.textStorage?.setAttributedString(attributedString)
+            logView.textStorage?.setAttributedString(attributedString)
         }
     }
     
@@ -95,6 +123,7 @@ class ViewController: NSViewController {
         isBusy = true
         setStatus("Downloading…\n")
         goButton.isEnabled = false
+        statusLabel.isHidden = true
         progressBar.startAnimation(nil)
         
         let tempDir = URL(fileURLWithPath: NSTemporaryDirectory() + "/odysseyra1n")
@@ -172,6 +201,7 @@ class ViewController: NSViewController {
         }
         progressBar.stopAnimation(nil)
         goButton.isEnabled = true
+        statusLabel.isHidden = false
     }
 
 }
