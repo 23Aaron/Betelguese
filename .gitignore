@@ -10,7 +10,6 @@ xcuserdata/
 *.xccheckout
 
 ## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-build/
 DerivedData/
 *.moved-aside
 *.pbxuser
@@ -88,5 +87,11 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
 .DS_Store
 Betelguese/.DS_Store
+
+build/*.tar.gz
+build/libplist/
+build/libusbmuxd/
+build/sshpass/
