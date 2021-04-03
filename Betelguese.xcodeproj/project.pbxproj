@@ -13,8 +13,6 @@
 		938B18E8249262D8008153AB /* COPYING.libplist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 938B18E6249262D8008153AB /* COPYING.libplist.txt */; };
 		938B18E9249262D8008153AB /* COPYING.libusbmuxd.txt in Resources */ = {isa = PBXBuildFile; fileRef = 938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */; };
 		938B18ED24926724008153AB /* iproxy in Resources */ = {isa = PBXBuildFile; fileRef = 938B18EA24926317008153AB /* iproxy */; };
-		938B18EE24926724008153AB /* libplist.3.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 938B18EB24926317008153AB /* libplist.3.dylib */; };
-		938B18EF24926724008153AB /* libusbmuxd.6.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 938B18EC24926317008153AB /* libusbmuxd.6.dylib */; };
 		938B18F324939CFA008153AB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938B18F224939CFA008153AB /* WindowController.swift */; };
 		93A12EDA2491C3E200765143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A12ED92491C3E200765143 /* AppDelegate.swift */; };
 		93A12EDC2491C3E200765143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A12EDB2491C3E200765143 /* ViewController.swift */; };
@@ -30,8 +28,6 @@
 		938B18E6249262D8008153AB /* COPYING.libplist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.libplist.txt; sourceTree = "<group>"; };
 		938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.libusbmuxd.txt; sourceTree = "<group>"; };
 		938B18EA24926317008153AB /* iproxy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = iproxy; sourceTree = "<group>"; };
-		938B18EB24926317008153AB /* libplist.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libplist.3.dylib; sourceTree = "<group>"; };
-		938B18EC24926317008153AB /* libusbmuxd.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libusbmuxd.6.dylib; sourceTree = "<group>"; };
 		938B18F224939CFA008153AB /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		93A12ED62491C3E200765143 /* Betelguese.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Betelguese.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A12ED92491C3E200765143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				938B18EA24926317008153AB /* iproxy */,
-				938B18EB24926317008153AB /* libplist.3.dylib */,
-				938B18EC24926317008153AB /* libusbmuxd.6.dylib */,
 				93A878FB25FDBCBD00187BCB /* sshpass */,
 				938B18E6249262D8008153AB /* COPYING.libplist.txt */,
 				938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */,
@@ -160,8 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				938B18ED24926724008153AB /* iproxy in Resources */,
-				938B18EE24926724008153AB /* libplist.3.dylib in Resources */,
-				938B18EF24926724008153AB /* libusbmuxd.6.dylib in Resources */,
 				937E90822607041D00B9AD28 /* COPYING.sshpass.txt in Resources */,
 				938B18E9249262D8008153AB /* COPYING.libusbmuxd.txt in Resources */,
 				93A878FC25FDBCBD00187BCB /* sshpass in Resources */,
