@@ -94,6 +94,17 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func saveLog(_ sender: Any) {
+        do {
+            let desktopURL = try FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let url = desktopURL.appendingPathComponent("Betelguese Log.txt")
+            try logView.string.write(to: url, atomically: true, encoding: .utf8)
+            NSWorkspace.shared.activateFileViewerSelecting([ url ])
+        } catch {
+            NSAlert(error: error as NSError).beginSheetModal(for: view.window!)
+        }
+    }
+    
     @IBAction func startButtonClick(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "oneClickMode") {
             doStuff()
@@ -126,11 +137,11 @@ class ViewController: NSViewController {
         statusLabel.isHidden = true
         progressBar.startAnimation(nil)
         
-        let tempDir = URL(fileURLWithPath: NSTemporaryDirectory() + "/odysseyra1n")
+        let tempDir = URL(fileURLWithPath: NSTemporaryDirectory() + "/betelguese")
         try? FileManager.default.removeItem(at: tempDir)
         try? FileManager.default.createDirectory(at: tempDir, withIntermediateDirectories: true, attributes: nil)
         
-        URLSession.shared.downloadTask(with: URL(string: "https://taurine.app/docs/betelguese.sh")!) { (url, response, error) in
+        URLSession.shared.downloadTask(with: URL(string: "https://taurine.app/docs/betelguese-1.1.sh")!) { (url, response, error) in
             if error != nil {
                 DispatchQueue.main.async {
                     NSAlert(error: error!).beginSheetModal(for: self.view.window!, completionHandler: nil)
@@ -161,9 +172,12 @@ class ViewController: NSViewController {
             process.standardOutput = outputPipe
             process.standardError = outputPipe
             outputPipe.fileHandleForReading.readabilityHandler = { handle in
-                let text = String(data: handle.availableData, encoding: .utf8) ?? ""
-                DispatchQueue.main.async {
-                    self.setStatus(text, isLogOutput: true)
+                let data = handle.availableData
+                if !data.isEmpty {
+                    let text = String(data: handle.availableData, encoding: .utf8) ?? ""
+                    DispatchQueue.main.async {
+                        self.setStatus(text, isLogOutput: true)
+                    }
                 }
             }
             

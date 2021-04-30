@@ -62,6 +62,11 @@ extern "C" {
 #define AMSVC_SCREENSHOT            CFSTR("com.apple.screenshotr")
 #define AMSVC_SYSLOG_RELAY          CFSTR("com.apple.syslog_relay")
 #define AMSVC_SYSTEM_PROFILER       CFSTR("com.apple.mobile.system_profiler")
+
+    /* Device interface types */
+#define AM_DEVICE_INTERFACE_UNKNOWN 0
+#define AM_DEVICE_INTERFACE_USB     1
+#define AM_DEVICE_INTERFACE_WIFI    2
 	
 	typedef unsigned int afc_error_t;
 	typedef unsigned int usbmux_error_t;
@@ -228,6 +233,15 @@ extern "C" {
 	 */
 	
 	mach_error_t AMDeviceValidatePairing(struct am_device *device);
+
+    /*  Determine the interface the device is connected on.
+     *
+     *  Returns:
+     *      AM_DEVICE_INTERFACE_UNKNOWN  if error
+     *      AM_DEVICE_INTERFACE_USB      if directly connected by USB
+     *      AM_DEVICE_INTERFACE_WIFI     if connected wirelessly over network
+     */
+    int AMDeviceGetInterfaceType(struct am_device *device);
 	
 	/*  Creates a Lockdown session and adjusts the device structure appropriately
 	 *  to indicate that the session has been started. iTunes calls this function

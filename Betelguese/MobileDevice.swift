@@ -18,6 +18,12 @@ enum AMDeviceNotificationCallbackMessage: UInt32 {
     case unknown = 3
 }
 
+enum AMDeviceInterfaceType: Int32 {
+    case unknown = 0
+    case usb = 1
+    case wifi = 2
+}
+
 class MobileDeviceHelper {
 
     static let deviceDidConnectNotification = Notification.Name(rawValue: "MobileDeviceDidConnectNotification")
@@ -47,8 +53,10 @@ class MobileDeviceHelper {
         switch AMDeviceNotificationCallbackMessage(rawValue: info.msg) ?? .unknown {
         case .connected:
             if info.dev != deviceConnected {
-                disconnect()
-                connect(device: info.dev)
+                if AMDeviceInterfaceType(rawValue: AMDeviceGetInterfaceType(info.dev)) ?? .unknown == .usb {
+                    disconnect()
+                    connect(device: info.dev)
+                }
             }
             break
 

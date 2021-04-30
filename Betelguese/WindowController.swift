@@ -1,6 +1,6 @@
 //
 //  WindowController.swift
-//  Odysseyra1n
+//  Betelguese
 //
 //  Created by 23 Aaron on 12/06/2020.
 //  Copyright © 2020 23 Aaron. All rights reserved.

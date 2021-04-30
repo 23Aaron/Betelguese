@@ -20,7 +20,6 @@
 		93A12EDC2491C3E200765143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A12EDB2491C3E200765143 /* ViewController.swift */; };
 		93A12EDE2491C3E600765143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A12EDD2491C3E600765143 /* Assets.xcassets */; };
 		93A12EE12491C3E600765143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A12EDF2491C3E600765143 /* Main.storyboard */; };
-		93A12EEA249207AA00765143 /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A12EE9249207AA00765143 /* BackgroundImage.swift */; };
 		93A878FC25FDBCBD00187BCB /* sshpass in Resources */ = {isa = PBXBuildFile; fileRef = 93A878FB25FDBCBD00187BCB /* sshpass */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +40,6 @@
 		93A12EDD2491C3E600765143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93A12EE02491C3E600765143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93A12EE22491C3E600765143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A12EE9249207AA00765143 /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 		93A878F825FDB0B400187BCB /* Betelguese.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Betelguese.entitlements; sourceTree = "<group>"; };
 		93A878FB25FDBCBD00187BCB /* sshpass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = sshpass; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +93,6 @@
 				9330C5AD2493D2A30070CB55 /* AboutViewController.swift */,
 				93A12EDD2491C3E600765143 /* Assets.xcassets */,
 				93A12EDF2491C3E600765143 /* Main.storyboard */,
-				93A12EE9249207AA00765143 /* BackgroundImage.swift */,
 				93A12EE22491C3E600765143 /* Info.plist */,
 				93A878F825FDB0B400187BCB /* Betelguese.entitlements */,
 				937A087126181F14004A6D0A /* Betelguese-Bridging-Header.h */,
@@ -185,7 +182,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A12EEA249207AA00765143 /* BackgroundImage.swift in Sources */,
 				938B18F324939CFA008153AB /* WindowController.swift in Sources */,
 				93A12EDC2491C3E200765143 /* ViewController.swift in Sources */,
 				937A087E26182ABE004A6D0A /* MobileDevice.swift in Sources */,
@@ -340,6 +336,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Betelguese",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.23aaron.Betelgeuse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Betelguese/Betelguese-Bridging-Header.h";
@@ -365,6 +362,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Betelguese",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.23aaron.Betelgeuse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Betelguese/Betelguese-Bridging-Header.h";
