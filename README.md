@@ -11,7 +11,7 @@
 <a href="#readme"><img src="Assets/coloured line.png" alt=""></a>
 
 This repository acts as a GUI for the Odysseyra1n bootstrap installation. Made mostly with Swift.<br/>
-**To install**, download the latest release from [here](https://github.com/23Aaron/Betelguese/releases), and just open. Simple as that!<br/>
+**To install**, simply run `brew install betelguese` if you use brew or download the latest release from [here](https://github.com/23Aaron/Betelguese/releases), and just open. Simple as that!<br/>
 
 <a href="#readme"><img src="Assets/coloured line.png" alt=""></a>
 
