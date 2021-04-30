@@ -34,7 +34,7 @@ Documentation for further contribution is available here: [Procursus](https://gi
 Odyssey Repo Maintained by: [@CStar_OW](https://twitter.com/CStar_OW)<br/>
 Procursus Repo Maintained by: [@Diatrus](https://twitter.com/Diatrus)<br/>
 Betelguese by: [@23Aaron_](https://twitter.com/23Aaron_) & [@hbkirb](https://twitter.com/hbkirb)<br/>
-README Dev: [@goodboyqdx](https://twitter.com/goodboyqdx)
+README Dev: [@qdxHimself](https://twitter.com/qdxHimself)
 
 <a href="#readme"><img src="Assets/coloured line.png" alt=""></a>
 
