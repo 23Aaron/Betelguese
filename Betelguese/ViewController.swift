@@ -58,15 +58,18 @@ class ViewController: NSViewController {
         if firmware.compare("12.0") == .orderedAscending {
             statusLabel.stringValue = "\(name) (iOS \(firmware)) is not compatible."
             goButton.isEnabled = false
+            goTouchBarButton?.isEnabled = false
         } else {
             statusLabel.stringValue = "Ready to install on \(name) (iOS \(firmware))"
             goButton.isEnabled = !isBusy
+            goTouchBarButton?.isEnabled = !isBusy
         }
     }
 
     @objc private func deviceDidDisconnect() {
         statusLabel.stringValue = "Connect your device to continue."
         goButton.isEnabled = false
+        goTouchBarButton?.isEnabled = false
     }
     
     @objc func refreshStatus() {
@@ -134,6 +137,7 @@ class ViewController: NSViewController {
         isBusy = true
         setStatus("Downloading…\n")
         goButton.isEnabled = false
+        goTouchBarButton?.isEnabled = false
         statusLabel.isHidden = true
         progressBar.startAnimation(nil)
         
@@ -214,6 +218,7 @@ class ViewController: NSViewController {
         }
         progressBar.stopAnimation(nil)
         goButton.isEnabled = true
+        goTouchBarButton?.isEnabled = true
         statusLabel.isHidden = false
     }
 

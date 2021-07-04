@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="17008"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="18009"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
@@ -107,7 +107,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="640" height="450"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1255"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
                         <toolbar key="toolbar" implicitIdentifier="A209997A-8C7A-4623-B088-E22E6CF0260F" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="Rfn-TK-cUu">
                             <allowedToolbarItems/>
                             <defaultToolbarItems/>
@@ -121,8 +121,7 @@
                             <touchBarItem id="g2Y-C4-k3w">
                                 <viewController key="viewController" id="QwJ-c1-5rF">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-3l-rMc">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
                                         <buttonCell key="cell" type="push" title="Install Odysseyra1n" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Pa-Ee-17x">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -138,7 +137,6 @@
                                 <viewController key="viewController" id="Irr-fq-9XK">
                                     <textField key="view" hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nkK-Ml-iOC">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Ready" id="61q-g4-Aug">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -151,8 +149,7 @@
                             <touchBarItem id="Q0r-Sw-wdO">
                                 <viewController key="viewController" id="qWY-Lh-kmX">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qM2-Ne-vTM">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
                                         <buttonCell key="cell" type="push" title="About Betelguese" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9mh-DT-Ivs">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -178,7 +175,7 @@
         <!--Window Controller-->
         <scene sceneID="H1I-pk-k1P">
             <objects>
-                <windowController id="K2q-w9-unQ" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="K2q-w9-unQ" sceneMemberID="viewController">
                     <window key="window" title="About Betelguese" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="0Ls-sE-PqY">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -933,7 +930,7 @@
                 </viewController>
                 <customObject id="hpj-hb-bfv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="803"/>
+            <point key="canvasLocation" x="742" y="961"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -951,11 +948,11 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="background" id="0SG-ku-b1L"/>
                             </imageView>
-                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="44" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-Hc-Du1">
-                                <rect key="frame" x="145" y="80" width="350" height="188"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="22" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-Hc-Du1">
+                                <rect key="frame" x="145" y="80" width="350" height="206"/>
                                 <subviews>
                                     <box boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-Lo-KTy">
-                                        <rect key="frame" x="0.0" y="124" width="350" height="64"/>
+                                        <rect key="frame" x="0.0" y="142" width="350" height="64"/>
                                         <view key="contentView" id="LgT-ju-6p1">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="64"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1014,7 +1011,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </box>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="06U-38-WiW">
-                                        <rect key="frame" x="0.0" y="64" width="350" height="16"/>
+                                        <rect key="frame" x="0.0" y="104" width="350" height="16"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dfr-EB-fRe">
                                                 <rect key="frame" x="-2" y="0.0" width="354" height="16"/>
@@ -1042,8 +1039,87 @@
                                             <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="SMT-6D-x5H" secondAttribute="bottom" id="zYY-Nk-cr5"/>
                                         </constraints>
                                     </customView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veM-VZ-IvB">
+                                        <rect key="frame" x="55" y="42" width="240" height="40"/>
+                                        <subviews>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-Un-xbY">
+                                                <rect key="frame" x="0.0" y="24" width="240" height="16"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MzL-o2-sOS">
+                                                        <rect key="frame" x="-2" y="-1" width="122" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="6cQ-1U-ccN"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="check" title="Install Sileo" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7SN-Ce-3rw">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1W1-UB-62g">
+                                                        <rect key="frame" x="118" y="-1" width="122" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="dcA-Lh-yRZ"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="check" title="Install Cydia" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="abc-g9-hWE">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLE-Zk-XfO">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="16"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uUQ-Jg-Qp1">
+                                                        <rect key="frame" x="-2" y="-1" width="122" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="nUM-c5-Hx7"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="check" title="Install Zebra" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="A1C-KK-sHE">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w44-f6-DwS">
+                                                        <rect key="frame" x="118" y="-1" width="122" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="HQ2-UD-Pcx"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="check" title="Install NewTerm" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Hyo-RG-qUP">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SUs-8s-WRM">
-                                        <rect key="frame" x="100" y="-7" width="151" height="32"/>
+                                        <rect key="frame" x="99" y="-7" width="152" height="32"/>
                                         <buttonCell key="cell" type="push" title="Install Odysseyra1n" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4L9-oL-ZXG">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1061,8 +1137,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -1088,7 +1166,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="788"/>
+            <point key="canvasLocation" x="75" y="877"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1096,9 +1174,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AppIconImage" width="128" height="128"/>
-        <image name="GithubIcon" width="48" height="48"/>
-        <image name="TwitterIcon" width="48" height="48"/>
-        <image name="background" width="640" height="450"/>
+        <image name="GithubIcon" width="96" height="96"/>
+        <image name="TwitterIcon" width="96" height="96"/>
+        <image name="background" width="1280" height="900"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

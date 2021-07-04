@@ -11,6 +11,7 @@
 		9330C5AE2493D2A30070CB55 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330C5AD2493D2A30070CB55 /* AboutViewController.swift */; };
 		937A087826182467004A6D0A /* MobileDevice.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 937A087726182467004A6D0A /* MobileDevice.tbd */; };
 		937A087E26182ABE004A6D0A /* MobileDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A087D26182ABE004A6D0A /* MobileDevice.swift */; };
+		937C51E92691605000780BD3 /* subscript.sh in Resources */ = {isa = PBXBuildFile; fileRef = 937C51E82691605000780BD3 /* subscript.sh */; };
 		937E90822607041D00B9AD28 /* COPYING.sshpass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 937E90812607041D00B9AD28 /* COPYING.sshpass.txt */; };
 		938B18E8249262D8008153AB /* COPYING.libplist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 938B18E6249262D8008153AB /* COPYING.libplist.txt */; };
 		938B18E9249262D8008153AB /* COPYING.libusbmuxd.txt in Resources */ = {isa = PBXBuildFile; fileRef = 938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */; };
@@ -29,6 +30,7 @@
 		937A087126181F14004A6D0A /* Betelguese-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Betelguese-Bridging-Header.h"; sourceTree = "<group>"; };
 		937A087726182467004A6D0A /* MobileDevice.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = MobileDevice.tbd; sourceTree = "<group>"; };
 		937A087D26182ABE004A6D0A /* MobileDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevice.swift; sourceTree = "<group>"; };
+		937C51E82691605000780BD3 /* subscript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = subscript.sh; sourceTree = "<group>"; };
 		937E90812607041D00B9AD28 /* COPYING.sshpass.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.sshpass.txt; sourceTree = "<group>"; };
 		938B18E6249262D8008153AB /* COPYING.libplist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.libplist.txt; sourceTree = "<group>"; };
 		938B18E7249262D8008153AB /* COPYING.libusbmuxd.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.libusbmuxd.txt; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				937A087D26182ABE004A6D0A /* MobileDevice.swift */,
 				93A12ED92491C3E200765143 /* AppDelegate.swift */,
 				93A12EDB2491C3E200765143 /* ViewController.swift */,
+				937C51E82691605000780BD3 /* subscript.sh */,
 				938B18F224939CFA008153AB /* WindowController.swift */,
 				9330C5AD2493D2A30070CB55 /* AboutViewController.swift */,
 				93A12EDD2491C3E600765143 /* Assets.xcassets */,
@@ -169,6 +172,7 @@
 				937E90822607041D00B9AD28 /* COPYING.sshpass.txt in Resources */,
 				938B18E9249262D8008153AB /* COPYING.libusbmuxd.txt in Resources */,
 				93A878FC25FDBCBD00187BCB /* sshpass in Resources */,
+				937C51E92691605000780BD3 /* subscript.sh in Resources */,
 				938B18E8249262D8008153AB /* COPYING.libplist.txt in Resources */,
 				93A12EDE2491C3E600765143 /* Assets.xcassets in Resources */,
 				93A12EE12491C3E600765143 /* Main.storyboard in Resources */,
