@@ -878,12 +878,12 @@
                                         </textField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-Oh-8Gn">
                                             <rect key="frame" x="30" y="85" width="418" height="18"/>
-                                            <buttonCell key="cell" type="check" title="One Click Mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="v1F-fW-2Xh">
+                                            <buttonCell key="cell" type="check" title="Quick Mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="v1F-fW-2Xh">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="oneClickCheckboxChanged:" target="FIK-jU-6e2" id="eZj-3a-bc2"/>
+                                                <action selector="quickCheckboxChanged:" target="FIK-jU-6e2" id="eZj-3a-bc2"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -925,7 +925,7 @@
                         <outlet property="adamImageView" destination="i0j-Cd-Iro" id="OAY-EI-bcE"/>
                         <outlet property="coolstarImageView" destination="3ff-Vi-Ru6" id="T2N-sQ-Bw6"/>
                         <outlet property="diatrusImageView" destination="QRA-vY-UFi" id="Ssy-Fh-r7E"/>
-                        <outlet property="oneClickCheckbox" destination="4w0-Oh-8Gn" id="oDr-CG-EFl"/>
+                        <outlet property="quickCheckbox" destination="4w0-Oh-8Gn" id="oDr-CG-EFl"/>
                     </connections>
                 </viewController>
                 <customObject id="hpj-hb-bfv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -949,10 +949,10 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="background" id="0SG-ku-b1L"/>
                             </imageView>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="22" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bX-Hc-Du1">
-                                <rect key="frame" x="145" y="80" width="350" height="206"/>
+                                <rect key="frame" x="145" y="80" width="350" height="182"/>
                                 <subviews>
                                     <box boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-Lo-KTy">
-                                        <rect key="frame" x="0.0" y="142" width="350" height="64"/>
+                                        <rect key="frame" x="0.0" y="118" width="350" height="64"/>
                                         <view key="contentView" id="LgT-ju-6p1">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="64"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1011,7 +1011,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </box>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="06U-38-WiW">
-                                        <rect key="frame" x="0.0" y="104" width="350" height="16"/>
+                                        <rect key="frame" x="0.0" y="80" width="350" height="16"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dfr-EB-fRe">
                                                 <rect key="frame" x="-2" y="0.0" width="354" height="16"/>
@@ -1039,81 +1039,69 @@
                                             <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="SMT-6D-x5H" secondAttribute="bottom" id="zYY-Nk-cr5"/>
                                         </constraints>
                                     </customView>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veM-VZ-IvB">
-                                        <rect key="frame" x="55" y="42" width="240" height="40"/>
+                                    <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKw-Pj-GT0">
+                                        <rect key="frame" x="0.0" y="42" width="350" height="16"/>
                                         <subviews>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-Un-xbY">
-                                                <rect key="frame" x="0.0" y="24" width="240" height="16"/>
-                                                <subviews>
-                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MzL-o2-sOS">
-                                                        <rect key="frame" x="-2" y="-1" width="122" height="18"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="6cQ-1U-ccN"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="check" title="Install Sileo" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7SN-Ce-3rw">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1W1-UB-62g">
-                                                        <rect key="frame" x="118" y="-1" width="122" height="18"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="dcA-Lh-yRZ"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="check" title="Install Cydia" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="abc-g9-hWE">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLE-Zk-XfO">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="16"/>
-                                                <subviews>
-                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uUQ-Jg-Qp1">
-                                                        <rect key="frame" x="-2" y="-1" width="122" height="18"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="nUM-c5-Hx7"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="check" title="Install Zebra" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="A1C-KK-sHE">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w44-f6-DwS">
-                                                        <rect key="frame" x="118" y="-1" width="122" height="18"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="HQ2-UD-Pcx"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="check" title="Install NewTerm" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Hyo-RG-qUP">
-                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                    </button>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Naa-sa-qPb">
+                                                <rect key="frame" x="-2" y="0.0" width="44" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Install:" id="gJm-SA-XV6">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gkh-zR-x8H">
+                                                <rect key="frame" x="52" y="-1" width="56" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Sileo" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="yYl-yC-aQG">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="installCheckboxChanged:" target="XfG-lQ-9wD" id="UPB-11-93i"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w66-OM-k2b">
+                                                <rect key="frame" x="120" y="-1" width="62" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Zebra" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JGU-zM-dTs">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="installCheckboxChanged:" target="XfG-lQ-9wD" id="SoZ-VH-nfh"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HNk-Vc-uVY">
+                                                <rect key="frame" x="194" y="-1" width="61" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Cydia" bezelStyle="regularSquare" imagePosition="left" inset="2" id="x3K-oz-gLq">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="installCheckboxChanged:" target="XfG-lQ-9wD" id="Ah8-bL-YJM"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iWI-ED-P5K">
+                                                <rect key="frame" x="267" y="-1" width="83" height="18"/>
+                                                <buttonCell key="cell" type="check" title="NewTerm" bezelStyle="regularSquare" imagePosition="left" inset="2" id="5eR-l1-L60">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="installCheckboxChanged:" target="XfG-lQ-9wD" id="hN7-Nx-1AW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
@@ -1130,6 +1118,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="XKw-Pj-GT0" firstAttribute="width" secondItem="2bX-Hc-Du1" secondAttribute="width" id="0zb-tr-tQ5"/>
                                     <constraint firstItem="06U-38-WiW" firstAttribute="width" secondItem="2bX-Hc-Du1" secondAttribute="width" multiplier="1:1" id="CbV-OI-ccy"/>
                                     <constraint firstAttribute="width" constant="350" id="Uht-cb-rEw"/>
                                 </constraints>
@@ -1157,11 +1146,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cydiaCheckbox" destination="HNk-Vc-uVY" id="dpQ-w8-4yW"/>
                         <outlet property="goButton" destination="SUs-8s-WRM" id="YeJ-Fa-USR"/>
                         <outlet property="logView" destination="dlD-Cw-Nfk" id="gEF-k5-keX"/>
+                        <outlet property="newTermCheckbox" destination="iWI-ED-P5K" id="QlM-qS-Hmh"/>
                         <outlet property="progressBar" destination="SMT-6D-x5H" id="p3Q-eV-iAJ"/>
+                        <outlet property="sileoCheckbox" destination="gkh-zR-x8H" id="nu9-j6-UoG"/>
                         <outlet property="statusBox" destination="pQN-Lo-KTy" id="s8r-8W-HME"/>
                         <outlet property="statusLabel" destination="Dfr-EB-fRe" id="9Tq-bb-SVZ"/>
+                        <outlet property="zebraCheckbox" destination="w66-OM-k2b" id="bjU-QO-cca"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

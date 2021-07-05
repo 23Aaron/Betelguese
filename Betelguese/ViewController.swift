@@ -19,6 +19,11 @@ class ViewController: NSViewController {
     var goTouchBarButton: NSButton!
     var progressTouchBarLabel: NSTextField!
     
+    @IBOutlet weak var sileoCheckbox: NSButton!
+    @IBOutlet weak var zebraCheckbox: NSButton!
+    @IBOutlet weak var cydiaCheckbox: NSButton!
+    @IBOutlet weak var newTermCheckbox: NSButton!
+
     var isBusy = false
 
     override func viewWillAppear() {
@@ -108,8 +113,41 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func installCheckboxChanged(_ sender: NSButton) {
+        let checkboxes = [ sileoCheckbox, zebraCheckbox, cydiaCheckbox, newTermCheckbox ]
+        let numberSelected = checkboxes
+            .filter { item in item!.state == .on }
+            .count
+
+        for checkbox in checkboxes {
+            if numberSelected == 1 {
+                checkbox?.isEnabled = checkbox?.state == .off
+            } else {
+                checkbox?.isEnabled = true
+            }
+        }
+
+        if numberSelected == 1 && newTermCheckbox.state == .on {
+            let newTermAlert = NSAlert()
+            newTermAlert.messageText = "Disclaimer"
+            newTermAlert.informativeText = """
+            Please make sure selecting only NewTerm is the right option for you before continuing.
+
+            This is an advanced option that will not include a regular package manager of any kind, and is intended for users familiar with the command line.
+            """
+            newTermAlert.addButton(withTitle: "Continue")
+            newTermAlert.addButton(withTitle: "Cancel")
+            newTermAlert.beginSheetModal(for: view.window!) { (response) in
+                if response == .alertSecondButtonReturn {
+                    sender.state = .on
+                    self.installCheckboxChanged(sender)
+                }
+            }
+        }
+    }
+    
     @IBAction func startButtonClick(_ sender: Any) {
-        if UserDefaults.standard.bool(forKey: "oneClickMode") {
+        if UserDefaults.standard.bool(forKey: "quickMode") {
             doStuff()
             return
         }

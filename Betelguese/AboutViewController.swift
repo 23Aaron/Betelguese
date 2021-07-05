@@ -16,12 +16,12 @@ class AboutViewController: NSViewController {
     @IBOutlet weak var diatrusImageView: NSImageView!
     @IBOutlet weak var coolstarImageView: NSImageView!
     
-    @IBOutlet weak var oneClickCheckbox: NSButton!
+    @IBOutlet weak var quickCheckbox: NSButton!
     
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        oneClickCheckbox.state = UserDefaults.standard.bool(forKey: "oneClickMode") ? .on : .off
+        quickCheckbox.state = UserDefaults.standard.bool(forKey: "quickMode") ? .on : .off
         
         SDImageCache.shared.config.maxDiskSize = 1
 
@@ -57,8 +57,8 @@ class AboutViewController: NSViewController {
         NSWorkspace.shared.open(URL(string: "https://www.github.com/coolstar")!)
     }
     
-    @IBAction func oneClickCheckboxChanged(_ sender: NSButton) {
-        UserDefaults.standard.set(sender.state == .on, forKey: "oneClickMode")
+    @IBAction func quickCheckboxChanged(_ sender: NSButton) {
+        UserDefaults.standard.set(sender.state == .on, forKey: "quickMode")
     }
 }
 
